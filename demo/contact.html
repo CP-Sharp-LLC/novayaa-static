@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contact NOVAYAA HealthTech to request a consult or ask about services.">
+  <title>Contact — NOVAYAA HealthTech</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-left">
+        <span class="pill">HIPAA‑minded</span>
+        <span class="sep">•</span>
+        <span class="muted">Revenue cycle clarity for modern practices</span>
+      </div>
+      <div class="topbar-right">
+        <a href="tel:+14379297050" class="topbar-link">+1 437 929 7050</a>
+        <span class="sep">•</span>
+        <a href="mailto:info@novayaa.com" class="topbar-link">info@novayaa.com</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="navwrap" id="navwrap">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="Novayaa home">
+        <img class="brand-mark" src="assets/Novayaa_Icon_Square_Colour.png" alt="Novayaa logo mark">
+        <span class="brand-name">NOVAYAA</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="nav">
+        <a class="nav-link" href="index.html">Home</a>
+
+        <div class="dropdown">
+          <button class="dropbtn" type="button">Our Services <span class="chev">▾</span></button>
+          <div class="dropmenu">
+            <a href="services.html#rcm">Revenue Cycle Management</a>
+            <a href="services.html#billing">Medical Billing & Coding</a>
+            <a href="services.html#credentialing">Credentialing & Enrollment</a>
+            <a href="services.html#denials">Denial Management</a>
+            <a href="services.html#analytics">Practice Analytics</a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <button class="dropbtn" type="button">Solutions <span class="chev">▾</span></button>
+          <div class="dropmenu">
+            <a href="solutions.html#practices">Physician Practices</a>
+            <a href="solutions.html#urgent">Urgent Care</a>
+            <a href="solutions.html#asc">Surgical Centers</a>
+            <a href="solutions.html#labs">Laboratories</a>
+          </div>
+        </div>
+
+        <div class="dropdown">
+          <button class="dropbtn" type="button">Company <span class="chev">▾</span></button>
+          <div class="dropmenu">
+            <a href="company.html#about">About Us</a>
+            <a href="company.html#mission">Mission</a>
+            <a href="company.html#team">Leadership</a>
+          </div>
+        </div>
+
+        <a class="nav-link active" href="contact.html">Contact</a>
+        <a class="btn btn-primary nav-cta" href="contact.html#consult">Request a 10–15 min consult</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumbs">Home / Contact</div>
+    <h1>Contact Us</h1>
+    <p class="muted">Send us a note. If you prefer, request a quick 10–15 minute consult and we’ll respond with times.</p>
+  </div>
+</section>
+
+<section class="section" id="consult">
+  <div class="container split">
+    <div class="panel">
+      <h2>Quick Contact</h2>
+      <p class="muted">
+        Phone: <a href="tel:+14379297050">+1 437 929 7050</a><br>
+        Email: <a href="mailto:info@novayaa.com">info@novayaa.com</a><br>
+        Address: 252 Halfmoon Ct., West New York, NJ 07093
+      </p>
+      <p class="muted">Prefer email? Use the form — it will open a pre‑filled draft to info@novayaa.com (static‑site friendly).</p>
+      <div class="cards" style="grid-template-columns:1fr 1fr;gap:12px">
+        <div class="card">
+          <div class="icon">⏱</div>
+          <h3 style="margin:10px 0 6px">Fast response</h3>
+          <p>We’ll reply with times for a short call and a simple next‑step plan.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🔒</div>
+          <h3 style="margin:10px 0 6px">Privacy‑minded</h3>
+          <p>Share only what’s necessary. We’ll guide secure exchange options as needed.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>Send a message</h2>
+      <form class="form" id="contactForm">
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" name="name" placeholder="Your name" required>
+        </div>
+        <div class="field">
+          <label for="org">Organization</label>
+          <input id="org" name="org" placeholder="Practice / facility name">
+        </div>
+        <div class="field">
+          <label for="phone">Phone</label>
+          <input id="phone" name="phone" placeholder="(optional)">
+        </div>
+        <div class="field">
+          <label for="reply">Email</label>
+          <input id="reply" name="reply" type="email" placeholder="you@work.com" required>
+        </div>
+        <div class="field full">
+          <label for="topic">What do you want help with?</label>
+          <select id="topic" name="topic">
+            <option>Lower denials</option>
+            <option>Improve A/R follow‑up</option>
+            <option>Credentialing & enrollment</option>
+            <option>Billing & coding support</option>
+            <option>Reporting / forecasting</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label for="msg">Message</label>
+          <textarea id="msg" name="msg" placeholder="A quick summary of what's going on (payer issues, A/R aging, denials, etc.)" required></textarea>
+        </div>
+        <div class="field full">
+          <button class="btn btn-primary" type="submit">Open email draft</button>
+          <p class="muted" style="margin:10px 0 0;font-size:13px">This is a static site. Submitting opens your email client with a prefilled message.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  function v(id){ return (document.getElementById(id).value || '').trim(); }
+  var subject = encodeURIComponent('Consult request — NOVAYAA HealthTech');
+  var lines = [
+    'Name: ' + v('name'),
+    'Organization: ' + v('org'),
+    'Phone: ' + v('phone'),
+    'Reply-to: ' + v('reply'),
+    'Topic: ' + v('topic'),
+    '',
+    'Message:',
+    v('msg'),
+    '',
+    '— Sent from novayaa.com site'
+  ];
+  var body = encodeURIComponent(lines.join('\n'));
+  window.location.href = 'mailto:info@novayaa.com?subject=' + subject + '&body=' + body;
+});
+</script>
+
+
+<section class="section cta" id="cta">
+  <div class="container cta-inner">
+    <div>
+      <h2>Want to reduce denials and speed up payments?</h2>
+      <p>Send a short note about your current pain points. We’ll propose a practical plan in a quick call.</p>
+    </div>
+    <a class="btn btn-primary" href="contact.html#consult">Request a consult</a>
+  </div>
+</section>
+
+
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="footer-brand">
+        <img src="assets/Novayaa_Combination_Colour.jpg" alt="Novayaa logo" class="footer-logo">
+      </div>
+      <p class="muted">NOVAYAA HealthTech LLC — technology-driven billing + RCM support built by clinicians and billing experts.</p>
+      <div class="footer-badges">
+        <span class="badge">Transparent reporting</span>
+        <span class="badge">Dedicated support</span>
+        <span class="badge">Privacy‑minded</span>
+      </div>
+    </div>
+
+    <div>
+      <h4>Our Services</h4>
+      <ul class="footer-links">
+        <li><a href="services.html">Revenue Cycle Management</a></li><li><a href="services.html">Medical Billing &amp; Coding</a></li><li><a href="services.html">Credentialing &amp; Enrollment</a></li><li><a href="services.html">Denial Prevention &amp; Management</a></li><li><a href="services.html">Practice Analytics &amp; Forecasting</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Quick Contact</h4>
+      <ul class="footer-links">
+        <li><a href="tel:+14379297050">+1 437 929 7050</a></li>
+        <li><a href="mailto:info@novayaa.com">info@novayaa.com</a></li>
+        <li><span class="muted">252 Halfmoon Ct.<br>West New York, NJ 07093</span></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Get a walkthrough</h4>
+      <p class="muted">Tell us what you’re seeing (denials, A/R aging, slow payments). We’ll share a practical plan.</p>
+      <a class="btn btn-primary" href="contact.html#consult">Book a consult</a>
+    </div>
+  </div>
+
+  <div class="container footer-bottom">
+    <span class="muted">© 2025 NOVAYAA HealthTech LLC. All rights reserved.</span>
+    <span class="muted">Built as a static site.</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
