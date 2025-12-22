@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Novayaa | Medical Billing & Revenue Cycle Management</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Expert medical billing and revenue cycle management services. Maximize your practice revenue with Novayaa's comprehensive RCM solutions." />
+  
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://novayaa.com/" />
+  <meta property="og:title" content="Novayaa | Medical Billing & Revenue Cycle Management" />
+  <meta property="og:description" content="Expert medical billing and revenue cycle management services. Maximize your practice revenue with Novayaa's comprehensive RCM solutions." />
+  <meta property="og:image" content="https://novayaa.com/novayaa-logo-social.webp" />
+  <meta property="og:image:width" content="812" />
+  <meta property="og:image:height" content="226" />
+  <meta property="og:site_name" content="Novayaa" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://novayaa.com/" />
+  <meta name="twitter:title" content="Novayaa | Medical Billing & Revenue Cycle Management" />
+  <meta name="twitter:description" content="Expert medical billing and revenue cycle management services. Maximize your practice revenue with Novayaa's comprehensive RCM solutions." />
+  <meta name="twitter:image" content="https://novayaa.com/novayaa-logo.png" />
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Nunito+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #1c87d9;
+      --primary-dark: #0f5a98;
+      --accent: #23c9b5;
+      --text-main: #2f3440;
+      --text-muted: #6f7480;
+      --bg-light: #f7f9fc;
+      --border-soft: #e1e4ef;
+      --shadow-soft: 0 10px 30px rgba(16, 40, 80, 0.12);
+      --radius-lg: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Nunito Sans', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text-main);
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* Top contact bar */
+    .top-bar {
+      font-size: 13px;
+      background: #f4f7fb;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .top-bar-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 8px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .top-bar-left,
+    .top-bar-right {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .top-bar a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .pill-link {
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid var(--border-soft);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--primary-dark);
+    }
+
+    /* Header / Nav */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: #ffffff;
+      box-shadow: 0 2px 10px rgba(10, 40, 80, 0.06);
+    }
+
+    .nav-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-logo {
+      width: 44px;
+      height: auto;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .brand-text .name {
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 0.18em;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .brand-text .tagline {
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-size: 14px;
+    }
+
+    nav a {
+      position: relative;
+      padding-bottom: 3px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--primary-dark);
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.2s ease-out;
+    }
+
+    nav a:hover::after,
+    nav a.active::after {
+      width: 18px;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+    }
+
+    .btn {
+      border-radius: 999px;
+      padding: 9px 18px;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      border: none;
+      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out, background 0.12s ease-out;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #fff;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 34px rgba(12, 52, 110, 0.25);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--border-soft);
+      background: #fff;
+      color: var(--primary-dark);
+    }
+
+    .btn-outline:hover {
+      background: #f1f5fb;
+    }
+
+    /* Mobile nav */
+    .nav-toggle {
+      display: none;
+      border: none;
+      background: none;
+      cursor: pointer;
+      padding: 6px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: var(--text-main);
+      margin: 4px 0;
+      border-radius: 999px;
+      transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+    }
+
+    /* Hero */
+    .hero {
+      background: radial-gradient(circle at top left, #e5f3ff 0, #f7fbff 40%, #ffffff 80%);
+      border-bottom: 1px solid #eef2fb;
+    }
+
+    .hero-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 50px 20px 70px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 40px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--primary-dark);
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(32px, 4vw, 40px);
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero-subtitle {
+      font-size: 15px;
+      color: var(--text-muted);
+      max-width: 520px;
+      margin-bottom: 24px;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .hero-meta {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .hero-meta span::before {
+      content: "•";
+      margin-right: 8px;
+      color: var(--accent);
+    }
+
+    .hero-visual {
+      position: relative;
+    }
+
+    .hero-panel {
+      border-radius: var(--radius-lg);
+      background: #ffffff;
+      box-shadow: var(--shadow-soft);
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      font-size: 13px;
+    }
+
+    .hero-panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+
+    .hero-panel-title {
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .hero-chip {
+      font-size: 11px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: #ecf9ff;
+      color: var(--primary-dark);
+      font-weight: 600;
+    }
+
+    .metric-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .metric {
+      flex: 1;
+    }
+
+    .metric-label {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .metric-value {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    .metric-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: #f4faf9;
+      color: #10856a;
+      font-size: 11px;
+      margin-top: 4px;
+    }
+
+    .hero-taglist {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .hero-taglist span {
+      font-size: 10px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      color: var(--text-muted);
+      background: #fafbff;
+    }
+
+    /* Generic section styling */
+    section {
+      padding: 60px 20px;
+    }
+
+    .section-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      max-width: 640px;
+      margin-bottom: 28px;
+    }
+
+    .section-kicker {
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--primary-dark);
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    .section-subtitle {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    /* Cards */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-soft);
+      background: #ffffff;
+      padding: 18px 18px 20px;
+      box-shadow: 0 4px 16px rgba(12, 52, 110, 0.05);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 14px;
+    }
+
+    .card h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .card p {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .card-tag {
+      font-size: 11px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: #ecf5ff;
+      color: var(--primary-dark);
+      align-self: flex-start;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .card-link {
+      margin-top: auto;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--primary-dark);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .card-link::after {
+      content: "➜";
+      font-size: 12px;
+    }
+
+    /* Two-column section */
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 36px;
+      align-items: center;
+    }
+
+    .bullet-list {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .bullet-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .bullet-icon {
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      border: 2px solid var(--accent);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: var(--accent);
+      margin-top: 2px;
+    }
+
+    /* Contact section */
+    .section--light {
+      background: var(--bg-light);
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 30px;
+      align-items: flex-start;
+    }
+
+    .contact-card {
+      border-radius: var(--radius-lg);
+      background: #ffffff;
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 6px 18px rgba(12, 52, 110, 0.07);
+      padding: 20px 18px;
+      font-size: 14px;
+    }
+
+    .contact-card h3 {
+      font-size: 17px;
+      margin-bottom: 6px;
+    }
+
+    .contact-card p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .contact-item {
+      font-size: 13px;
+      padding: 10px 10px;
+      border-radius: 10px;
+      border: 1px solid var(--border-soft);
+      background: #f8fbff;
+    }
+
+    .contact-item span {
+      display: block;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .contact-item strong {
+      color: var(--primary-dark);
+    }
+
+    form {
+      display: grid;
+      gap: 10px;
+      font-size: 13px;
+    }
+
+    label {
+      font-weight: 600;
+      font-size: 12px;
+      color: var(--text-main);
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      border-radius: 9px;
+      border: 1px solid var(--border-soft);
+      padding: 8px 10px;
+      font-size: 13px;
+      font-family: inherit;
+      outline: none;
+      transition: border 0.15s ease-out, box-shadow 0.15s ease-out;
+      background: #fbfcff;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(29, 124, 217, 0.12);
+      background: #ffffff;
+    }
+
+    textarea {
+      min-height: 84px;
+      resize: vertical;
+    }
+
+    .form-row {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .form-footnote {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* Footer */
+    footer {
+      background: #071526;
+      color: #d1d7e5;
+      font-size: 13px;
+      padding: 24px 20px 18px;
+    }
+
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .footer-links a {
+      color: #99a4c0;
+    }
+
+    .footer-links a:hover {
+      color: #e6ecff;
+    }
+
+    /* Simple reveal animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero-inner,
+      .two-col,
+      .contact-layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero-inner {
+        padding-top: 34px;
+      }
+      .hero-visual {
+        order: -1;
+      }
+      .card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .top-bar-inner {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .nav-menu {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 100%;
+        background: #ffffff;
+        box-shadow: 0 12px 30px rgba(7, 25, 60, 0.18);
+        flex-direction: column;
+        padding: 12px 20px 14px;
+        display: none;
+      }
+
+      .nav-menu.open {
+        display: flex;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+      }
+
+      .nav-actions {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .card-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .form-row {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-meta span::before {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top bar -->
+  <div class="top-bar">
+    <div class="top-bar-inner">
+      <div class="top-bar-left">
+        <a href="tel:+16463309422">📞 +1 (646) 330-9422</a>
+        <a href="mailto:hello@novayaa.com">✉️ hello@novayaa.com</a>
+      </div>
+      <div class="top-bar-right">
+        <a href="#contact" class="pill-link">Talk to an expert</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header / Nav -->
+  <header>
+    <div class="nav-inner">
+      <div class="brand">
+        <!-- Swap src for your actual logo path -->
+        <img src="novayaa-logo.png" alt="Novayaa logo" class="brand-logo" />
+        <div class="brand-text">
+          <span class="name">NOVAYAA</span>
+          <span class="tagline">REVENUE CYCLE EXPERTS</span>
+        </div>
+      </div>
+
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-menu">
+        <nav>
+          <a href="#solutions" class="nav-link active">Solutions</a>
+          <a href="#industries" class="nav-link">Industries</a>
+          <a href="#why" class="nav-link">Why Novayaa</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+        <div class="nav-actions">
+          <button class="btn btn-outline" data-scroll="#contact">Schedule a demo</button>
+          <button class="btn btn-primary" data-scroll="#contact">Get started</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy reveal">
+        <div class="eyebrow">Medical billing simplified. Your revenue maximized.</div>
+        <h1>
+          Get paid faster. <span>We handle the insurance hassle.</span>
+        </h1>
+        <p class="hero-subtitle">
+          Novayaa takes the complexity out of medical billing and insurance claims. We chase down every dollar owed to your practice so you can focus on patient care, not paperwork.
+        </p>
+        <div class="hero-cta">
+          <button class="btn btn-primary" data-scroll="#contact">Book a live demo</button>
+          <button class="btn btn-outline" data-scroll="#solutions">Explore solutions</button>
+        </div>
+        <div class="hero-meta">
+          <span>98% claim acceptance rate</span>
+          <span>HIPAA compliant</span>
+          <span>Average 30% revenue increase</span>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="hero-panel">
+          <div class="hero-panel-header">
+            <div class="hero-panel-title">Live Revenue Snapshot</div>
+            <span class="hero-chip">Real-time tracking</span>
+          </div>
+          <div class="metric-row">
+            <div class="metric">
+              <div class="metric-label">Claims processed today</div>
+              <div class="metric-value">1,847</div>
+              <div class="metric-pill">▲ 22% vs. last month</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">Collections increase</div>
+              <div class="metric-value">+34%</div>
+              <div class="metric-pill">Expert follow-up</div>
+            </div>
+          </div>
+          <div class="hero-taglist">
+            <span>Claims submission</span>
+            <span>Denial management</span>
+            <span>Insurance verification</span>
+            <span>Payment posting</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions -->
+  <section id="solutions">
+    <div class="section-inner reveal">
+      <div class="section-header">
+        <div class="section-kicker">Revenue cycle solutions</div>
+        <h2 class="section-title">End-to-end billing services that maximize your reimbursements</h2>
+        <p class="section-subtitle">
+          From claim submission to denial appeals, Novayaa handles every step of the insurance payment process so you receive every dollar you've earned.
+        </p>
+      </div>
+
+      <div class="card-grid">
+        <article class="card">
+          <span class="card-tag">Claims Management</span>
+          <h3>Full-Service Claims Processing</h3>
+          <p>
+            We submit, track, and follow up on every claim with precision. Our experts handle rejections, appeals, and resubmissions to maximize first-pass acceptance.
+          </p>
+          <a href="#contact" class="card-link">See our success rates</a>
+        </article>
+
+        <article class="card">
+          <span class="card-tag">Denial Resolution</span>
+          <h3>Expert Denial Management</h3>
+          <p>
+            Our specialists analyze every denial, identify root causes, and aggressively pursue appeals. We turn rejections into revenue.
+          </p>
+          <a href="#contact" class="card-link">Learn about our process</a>
+        </article>
+
+        <article class="card">
+          <span class="card-tag">Collections</span>
+          <h3>Proactive Payment Recovery</h3>
+          <p>
+            We track outstanding claims, follow up with insurers persistently, and ensure timely payment posting. No payment falls through the cracks.
+          </p>
+          <a href="#contact" class="card-link">Request a revenue analysis</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industries -->
+  <section id="industries" class="section--light">
+    <div class="section-inner two-col">
+      <div class="reveal">
+        <div class="section-header">
+          <div class="section-kicker">Specialties we serve</div>
+          <h2 class="section-title">Expert billing for every medical specialty</h2>
+          <p class="section-subtitle">
+            Novayaa works with your practice management system and understands the unique coding and reimbursement challenges of your specialty.
+          whether you’re running a multi-location
+            
+          </p>
+        </div>
+
+        <ul class="bullet-list">
+          <li>
+            <span class="bullet-icon">✓</span>
+            <span><strong>Healthcare providers</strong> – streamline intake, documentation, and follow-ups while preserving clinician control.</span>
+          </li>
+          <li>
+            <span class="bullet-icon">✓</span>
+            <span><strong>Life sciences &amp; research</strong> – standardize study workflows, consent tracking, and monitoring across sites.</span>
+          </li>
+          <li>
+            <span class="bullet-icon">✓</span>
+            <span><strong>Healthtech platforms</strong> – plug in an AI orchestration layer across EHRs, CRMs, and custom services.</span>
+          </li>
+          <li>
+            <span class="bullet-icon">✓</span>
+            <span><strong>Payer &amp; revenue cycle</strong> – automate pre-auth, eligibility checks, and exception handling.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="reveal">
+        <div class="contact-card">
+          <h3>Start seeing results in 30 days</h3>
+          <p>
+            Quick onboarding gets your practice up and running fast, with measurable improvements in collections within the first month.
+          </p>
+          <div class="contact-grid">
+            <div class="contact-item">
+              <span>Onboarding time</span>
+              <strong>2–3 weeks</strong>
+            </div>
+            <div class="contact-item">
+              <span>System integration</span>
+              <strong>All major EMR/EHR platforms</strong>
+            </div>
+            <div class="contact-item">
+              <span>Average results</span>
+              <strong>30% revenue increase</strong>
+            </div>
+            <div class="contact-item">
+              <span>Support</span>
+              <strong>Dedicated billing specialist</strong>
+            </div>
+          </div>
+          <button class="btn btn-primary" data-scroll="#contact">Get a free revenue assessment</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Novayaa -->
+  <section id="why">
+    <div class="section-inner reveal two-col">
+      <div>
+        <div class="section-header">
+          <div class="section-kicker">Why Novayaa</div>
+          <h2 class="section-title">Expert billers who fight for every dollar</h2>
+          <p class="section-subtitle">
+            We combine certified medical billing specialists with proven technology to recover maximum reimbursement from insurance companies—guaranteed.
+          </p>
+        </div>
+        <ul class="bullet-list">
+          <li>
+            <span class="bullet-icon">✓</span>
+            <span><strong>Relentless follow-up</strong> – our team tracks every claim daily and persistently contacts insurers until payment is received.</span>
+          </li>
+          <li>
+            <span class="bullet-icon">✓</span>
+            <span><strong>Expert denial appeals</strong> – certified coders and billers who know exactly how to overturn denials and win appeals.</span>
+          </li>
+          <li>
+            <span class="bullet-icon">✓</span>
+            <span><strong>Complete transparency</strong> – real-time dashboards show claim status, aging reports, and collections performance.</span>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="hero-panel">
+          <div class="hero-panel-header">
+            <div class="hero-panel-title">Client Success Stories</div>
+            <span class="hero-chip">Real results</span>
+          </div>
+          <div class="metric-row">
+            <div class="metric">
+              <div class="metric-label">Claim denials</div>
+              <div class="metric-value">-67%</div>
+              <div class="metric-pill">Multi-specialty group</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">Days in A/R</div>
+              <div class="metric-value">-42%</div>
+              <div class="metric-pill">Primary care clinic</div>
+            </div>
+          </div>
+          <div class="hero-taglist">
+            <span>Revenue maximization</span>
+            <span>Compliance guaranteed</span>
+            <span>Full transparency</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section--light">
+    <div class="section-inner contact-layout">
+      <div class="reveal">
+        <div class="section-header">
+          <div class="section-kicker">Contact</div>
+          <h2 class="section-title">Let’s explore your first use case.</h2>
+          <p class="section-subtitle">
+            Tell us about your practice challenges. We’ll show you what an AI-assisted workflow
+            
+          </p>
+        </div>
+
+        <div class="contact-card">
+          <h3>Talk with a revenue cycle expert</h3>
+          <p>
+            No sales pitch, just a working session with someone who’s implemented complex
+            
+          </p>
+
+          <form id="contact-form">
+            <div class="form-row">
+              <div>
+                <label for="name">Full name</label>
+                <input id="name" name="name" type="text" required />
+              </div>
+              <div>
+                <label for="email">Work email</label>
+                <input id="email" name="email" type="email" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div>
+                <label for="company">Organization</label>
+                <input id="company" name="company" type="text" />
+              </div>
+              <div>
+                <label for="role">Role</label>
+                <input id="role" name="role" type="text" />
+              </div>
+            </div>
+
+            <div>
+              <label for="interest">Primary interest</label>
+              <select id="interest" name="interest">
+                <option>Full revenue cycle management</option>
+                <option>Claims submission &amp; follow-up</option>
+                <option>Denial management &amp; appeals</option>
+                <option>Credentialing &amp; contracting</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="message">What billing challenges are you facing?</label>
+              <textarea id="message" name="message"></textarea>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Submit inquiry</button>
+            <div class="form-footnote" id="form-status"></div>
+          </form>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="contact-card">
+          <h3>Prefer email or phone?</h3>
+          <p>Reach our team directly and we’ll route you to the right person.</p>
+          <div class="contact-item" style="margin-bottom:10px;">
+            <span>Email</span>
+            <strong><a href="mailto:hello@novayaa.com">hello@novayaa.com</a></strong>
+          </div>
+          <div class="contact-item" style="margin-bottom:10px;">
+            <span>Phone</span>
+            <strong><a href="tel:+16463309422">+1 (646) 330-9422</a></strong>
+          </div>
+          <p class="form-footnote">
+            For HIPAA compliance, please don’t send PHI in your initial message. We’ll share a
+            secure channel for detailed discussions.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <div>© <span id="year"></span> Novayaa. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="#">Privacy</a>
+        <a href="#">Security</a>
+        <a href="#">Responsible AI</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Smooth scrolling for nav links & buttons with data-scroll
+    function smoothScrollTo(target) {
+      const el = document.querySelector(target);
+      if (!el) return;
+      const headerOffset = 80;
+      const rect = el.getBoundingClientRect();
+      const offsetTop = rect.top + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth"
+      });
+    }
+
+    document.querySelectorAll("a.nav-link, .btn[data-scroll], .pill-link").forEach((el) => {
+      el.addEventListener("click", (e) => {
+        const href = el.getAttribute("href") || el.getAttribute("data-scroll");
+        if (href && href.startsWith("#")) {
+          e.preventDefault();
+          smoothScrollTo(href);
+        }
+      });
+    });
+
+    // Mobile nav toggle
+    const navToggle = document.querySelector(".nav-toggle");
+    const navMenu = document.querySelector(".nav-menu");
+
+    navToggle.addEventListener("click", () => {
+      navMenu.classList.toggle("open");
+    });
+
+    // Close nav on link click (mobile)
+    navMenu.querySelectorAll("a.nav-link").forEach((link) => {
+      link.addEventListener("click", () => {
+        navMenu.classList.remove("open");
+      });
+    });
+
+    // Simple section reveal on scroll
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.18 }
+    );
+
+    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+    // Highlight nav item on scroll
+    const sectionIds = ["solutions", "industries", "why", "contact"];
+    const sectionMap = sectionIds.map((id) => ({
+      id,
+      el: document.getElementById(id)
+    }));
+
+    const navLinks = document.querySelectorAll("a.nav-link");
+
+    function updateActiveNav() {
+      let currentId = null;
+      const scrollPos = window.pageYOffset + 110;
+
+      for (const s of sectionMap) {
+        if (s.el && scrollPos >= s.el.offsetTop) {
+          currentId = s.id;
+        }
+      }
+
+      navLinks.forEach((link) => {
+        const href = link.getAttribute("href");
+        if (href === "#" + currentId) {
+          link.classList.add("active");
+        } else {
+          link.classList.remove("active");
+        }
+      });
+    }
+
+    window.addEventListener("scroll", updateActiveNav);
+    window.addEventListener("load", updateActiveNav);
+
+    // Contact form: simple fake submit handler
+    const form = document.getElementById("contact-form");
+    const statusEl = document.getElementById("form-status");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      statusEl.textContent = "Thanks — we’ve recorded your details. A member of the Novayaa team will follow up shortly.";
+    });
+
+    // Footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

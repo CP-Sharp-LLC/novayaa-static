@@ -1,1218 +1,1065 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Novayaa | Medical Billing & Revenue Cycle Management</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Expert medical billing and revenue cycle management services. Maximize your practice revenue with Novayaa's comprehensive RCM solutions." />
-  
-  <!-- Open Graph / Facebook / WhatsApp -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://novayaa.com/" />
-  <meta property="og:title" content="Novayaa | Medical Billing & Revenue Cycle Management" />
-  <meta property="og:description" content="Expert medical billing and revenue cycle management services. Maximize your practice revenue with Novayaa's comprehensive RCM solutions." />
-  <meta property="og:image" content="https://novayaa.com/novayaa-logo-social.webp" />
-  <meta property="og:image:width" content="812" />
-  <meta property="og:image:height" content="226" />
-  <meta property="og:site_name" content="Novayaa" />
-  
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:url" content="https://novayaa.com/" />
-  <meta name="twitter:title" content="Novayaa | Medical Billing & Revenue Cycle Management" />
-  <meta name="twitter:description" content="Expert medical billing and revenue cycle management services. Maximize your practice revenue with Novayaa's comprehensive RCM solutions." />
-  <meta name="twitter:image" content="https://novayaa.com/novayaa-logo.png" />
-  
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Nunito+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --primary: #1c87d9;
-      --primary-dark: #0f5a98;
-      --accent: #23c9b5;
-      --text-main: #2f3440;
-      --text-muted: #6f7480;
-      --bg-light: #f7f9fc;
-      --border-soft: #e1e4ef;
-      --shadow-soft: 0 10px 30px rgba(16, 40, 80, 0.12);
-      --radius-lg: 18px;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Nunito Sans', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text-main);
-      background: #ffffff;
-      line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    /* Top contact bar */
-    .top-bar {
-      font-size: 13px;
-      background: #f4f7fb;
-      color: var(--text-muted);
-      border-bottom: 1px solid var(--border-soft);
-    }
-
-    .top-bar-inner {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 8px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .top-bar-left,
-    .top-bar-right {
-      display: flex;
-      gap: 18px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .top-bar a {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .pill-link {
-      padding: 5px 12px;
-      border-radius: 999px;
-      background: #ffffff;
-      border: 1px solid var(--border-soft);
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--primary-dark);
-    }
-
-    /* Header / Nav */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: #ffffff;
-      box-shadow: 0 2px 10px rgba(10, 40, 80, 0.06);
-    }
-
-    .nav-inner {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 14px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 30px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .brand-logo {
-      width: 44px;
-      height: auto;
-    }
-
-    .brand-text {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .brand-text .name {
-      font-family: 'Montserrat', sans-serif;
-      letter-spacing: 0.18em;
-      font-size: 16px;
-      font-weight: 600;
-    }
-
-    .brand-text .tagline {
-      font-size: 11px;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 22px;
-      font-size: 14px;
-    }
-
-    nav a {
-      position: relative;
-      padding-bottom: 3px;
-      color: var(--text-muted);
-      font-weight: 500;
-    }
-
-    nav a:hover,
-    nav a.active {
-      color: var(--primary-dark);
-    }
-
-    nav a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0;
-      height: 2px;
-      background: var(--primary);
-      transition: width 0.2s ease-out;
-    }
-
-    nav a:hover::after,
-    nav a.active::after {
-      width: 18px;
-    }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 14px;
-    }
-
-    .btn {
-      border-radius: 999px;
-      padding: 9px 18px;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      border: none;
-      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out, background 0.12s ease-out;
-      font-size: 14px;
-      white-space: nowrap;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      color: #fff;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 14px 34px rgba(12, 52, 110, 0.25);
-    }
-
-    .btn-outline {
-      border: 1px solid var(--border-soft);
-      background: #fff;
-      color: var(--primary-dark);
-    }
-
-    .btn-outline:hover {
-      background: #f1f5fb;
-    }
-
-    /* Mobile nav */
-    .nav-toggle {
-      display: none;
-      border: none;
-      background: none;
-      cursor: pointer;
-      padding: 6px;
-    }
-
-    .nav-toggle span {
-      display: block;
-      width: 20px;
-      height: 2px;
-      background: var(--text-main);
-      margin: 4px 0;
-      border-radius: 999px;
-      transition: transform 0.2s ease-out, opacity 0.2s ease-out;
-    }
-
-    .nav-menu {
-      display: flex;
-      align-items: center;
-      gap: 26px;
-    }
-
-    /* Hero */
-    .hero {
-      background: radial-gradient(circle at top left, #e5f3ff 0, #f7fbff 40%, #ffffff 80%);
-      border-bottom: 1px solid #eef2fb;
-    }
-
-    .hero-inner {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 50px 20px 70px;
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 40px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      font-size: 12px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--primary-dark);
-      font-weight: 600;
-      margin-bottom: 16px;
-    }
-
-    .hero h1 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: clamp(32px, 4vw, 40px);
-      line-height: 1.15;
-      margin-bottom: 14px;
-    }
-
-    .hero h1 span {
-      color: var(--primary);
-    }
-
-    .hero-subtitle {
-      font-size: 15px;
-      color: var(--text-muted);
-      max-width: 520px;
-      margin-bottom: 24px;
-    }
-
-    .hero-cta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-
-    .hero-meta {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-      font-size: 12px;
-      color: var(--text-muted);
-    }
-
-    .hero-meta span::before {
-      content: "•";
-      margin-right: 8px;
-      color: var(--accent);
-    }
-
-    .hero-visual {
-      position: relative;
-    }
-
-    .hero-panel {
-      border-radius: var(--radius-lg);
-      background: #ffffff;
-      box-shadow: var(--shadow-soft);
-      padding: 18px 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      font-size: 13px;
-    }
-
-    .hero-panel-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 6px;
-    }
-
-    .hero-panel-title {
-      font-weight: 700;
-      font-size: 14px;
-    }
-
-    .hero-chip {
-      font-size: 11px;
-      padding: 4px 9px;
-      border-radius: 999px;
-      background: #ecf9ff;
-      color: var(--primary-dark);
-      font-weight: 600;
-    }
-
-    .metric-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-    }
-
-    .metric {
-      flex: 1;
-    }
-
-    .metric-label {
-      font-size: 11px;
-      color: var(--text-muted);
-      margin-bottom: 4px;
-    }
-
-    .metric-value {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--primary-dark);
-    }
-
-    .metric-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 9px;
-      border-radius: 999px;
-      background: #f4faf9;
-      color: #10856a;
-      font-size: 11px;
-      margin-top: 4px;
-    }
-
-    .hero-taglist {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 10px;
-    }
-
-    .hero-taglist span {
-      font-size: 10px;
-      padding: 4px 8px;
-      border-radius: 999px;
-      border: 1px solid var(--border-soft);
-      color: var(--text-muted);
-      background: #fafbff;
-    }
-
-    /* Generic section styling */
-    section {
-      padding: 60px 20px;
-    }
-
-    .section-inner {
-      max-width: 1120px;
-      margin: 0 auto;
-    }
-
-    .section-header {
-      max-width: 640px;
-      margin-bottom: 28px;
-    }
-
-    .section-kicker {
-      font-size: 12px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--primary-dark);
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
-
-    .section-title {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 24px;
-      margin-bottom: 8px;
-    }
-
-    .section-subtitle {
-      font-size: 14px;
-      color: var(--text-muted);
-    }
-
-    /* Cards */
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border-soft);
-      background: #ffffff;
-      padding: 18px 18px 20px;
-      box-shadow: 0 4px 16px rgba(12, 52, 110, 0.05);
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      font-size: 14px;
-    }
-
-    .card h3 {
-      font-size: 16px;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .card p {
-      font-size: 13px;
-      color: var(--text-muted);
-    }
-
-    .card-tag {
-      font-size: 11px;
-      padding: 3px 8px;
-      border-radius: 999px;
-      background: #ecf5ff;
-      color: var(--primary-dark);
-      align-self: flex-start;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .card-link {
-      margin-top: auto;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--primary-dark);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .card-link::after {
-      content: "➜";
-      font-size: 12px;
-    }
-
-    /* Two-column section */
-    .two-col {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 36px;
-      align-items: center;
-    }
-
-    .bullet-list {
-      list-style: none;
-      display: grid;
-      gap: 10px;
-      margin-top: 10px;
-    }
-
-    .bullet-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 14px;
-      color: var(--text-muted);
-    }
-
-    .bullet-icon {
-      flex-shrink: 0;
-      width: 18px;
-      height: 18px;
-      border-radius: 999px;
-      border: 2px solid var(--accent);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 11px;
-      color: var(--accent);
-      margin-top: 2px;
-    }
-
-    /* Contact section */
-    .section--light {
-      background: var(--bg-light);
-    }
-
-    .contact-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 30px;
-      align-items: flex-start;
-    }
-
-    .contact-card {
-      border-radius: var(--radius-lg);
-      background: #ffffff;
-      border: 1px solid var(--border-soft);
-      box-shadow: 0 6px 18px rgba(12, 52, 110, 0.07);
-      padding: 20px 18px;
-      font-size: 14px;
-    }
-
-    .contact-card h3 {
-      font-size: 17px;
-      margin-bottom: 6px;
-    }
-
-    .contact-card p {
-      font-size: 13px;
-      color: var(--text-muted);
-      margin-bottom: 14px;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-      margin-bottom: 14px;
-    }
-
-    .contact-item {
-      font-size: 13px;
-      padding: 10px 10px;
-      border-radius: 10px;
-      border: 1px solid var(--border-soft);
-      background: #f8fbff;
-    }
-
-    .contact-item span {
-      display: block;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--text-muted);
-      margin-bottom: 4px;
-    }
-
-    .contact-item strong {
-      color: var(--primary-dark);
-    }
-
-    form {
-      display: grid;
-      gap: 10px;
-      font-size: 13px;
-    }
-
-    label {
-      font-weight: 600;
-      font-size: 12px;
-      color: var(--text-main);
-    }
-
-    input,
-    textarea,
-    select {
-      width: 100%;
-      border-radius: 9px;
-      border: 1px solid var(--border-soft);
-      padding: 8px 10px;
-      font-size: 13px;
-      font-family: inherit;
-      outline: none;
-      transition: border 0.15s ease-out, box-shadow 0.15s ease-out;
-      background: #fbfcff;
-    }
-
-    input:focus,
-    textarea:focus,
-    select:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 2px rgba(29, 124, 217, 0.12);
-      background: #ffffff;
-    }
-
-    textarea {
-      min-height: 84px;
-      resize: vertical;
-    }
-
-    .form-row {
-      display: grid;
-      gap: 10px;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .form-footnote {
-      font-size: 11px;
-      color: var(--text-muted);
-      margin-top: 4px;
-    }
-
-    /* Footer */
-    footer {
-      background: #071526;
-      color: #d1d7e5;
-      font-size: 13px;
-      padding: 24px 20px 18px;
-    }
-
-    .footer-inner {
-      max-width: 1120px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-
-    .footer-links a {
-      color: #99a4c0;
-    }
-
-    .footer-links a:hover {
-      color: #e6ecff;
-    }
-
-    /* Simple reveal animation */
-    .reveal {
-      opacity: 0;
-      transform: translateY(14px);
-      transition: opacity 0.45s ease-out, transform 0.45s ease-out;
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      .hero-inner,
-      .two-col,
-      .contact-layout {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .hero-inner {
-        padding-top: 34px;
-      }
-      .hero-visual {
-        order: -1;
-      }
-      .card-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 720px) {
-      .top-bar-inner {
-        justify-content: center;
-        text-align: center;
-      }
-
-      .nav-menu {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 100%;
-        background: #ffffff;
-        box-shadow: 0 12px 30px rgba(7, 25, 60, 0.18);
-        flex-direction: column;
-        padding: 12px 20px 14px;
-        display: none;
-      }
-
-      .nav-menu.open {
-        display: flex;
-      }
-
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-      }
-
-      .nav-actions {
-        width: 100%;
-        justify-content: flex-start;
-      }
-
-      .nav-toggle {
-        display: block;
-      }
-
-      .card-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .form-row {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .hero-meta span::before {
-        display: none;
-      }
-    }
-  </style>
-</head>
-<body>
-  <!-- Top bar -->
-  <div class="top-bar">
-    <div class="top-bar-inner">
-      <div class="top-bar-left">
-        <a href="tel:+16463309422">📞 +1 (646) 330-9422</a>
-        <a href="mailto:hello@novayaa.com">✉️ hello@novayaa.com</a>
-      </div>
-      <div class="top-bar-right">
-        <a href="#contact" class="pill-link">Talk to an expert</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Header / Nav -->
-  <header>
-    <div class="nav-inner">
-      <div class="brand">
-        <!-- Swap src for your actual logo path -->
-        <img src="novayaa-logo.png" alt="Novayaa logo" class="brand-logo" />
-        <div class="brand-text">
-          <span class="name">NOVAYAA</span>
-          <span class="tagline">REVENUE CYCLE EXPERTS</span>
-        </div>
-      </div>
-
-      <button class="nav-toggle" aria-label="Toggle navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <div class="nav-menu">
-        <nav>
-          <a href="#solutions" class="nav-link active">Solutions</a>
-          <a href="#industries" class="nav-link">Industries</a>
-          <a href="#why" class="nav-link">Why Novayaa</a>
-          <a href="#contact" class="nav-link">Contact</a>
-        </nav>
-        <div class="nav-actions">
-          <button class="btn btn-outline" data-scroll="#contact">Schedule a demo</button>
-          <button class="btn btn-primary" data-scroll="#contact">Get started</button>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-copy reveal">
-        <div class="eyebrow">Medical billing simplified. Your revenue maximized.</div>
-        <h1>
-          Get paid faster. <span>We handle the insurance hassle.</span>
-        </h1>
-        <p class="hero-subtitle">
-          Novayaa takes the complexity out of medical billing and insurance claims. We chase down every dollar owed to your practice so you can focus on patient care, not paperwork.
-        </p>
-        <div class="hero-cta">
-          <button class="btn btn-primary" data-scroll="#contact">Book a live demo</button>
-          <button class="btn btn-outline" data-scroll="#solutions">Explore solutions</button>
-        </div>
-        <div class="hero-meta">
-          <span>98% claim acceptance rate</span>
-          <span>HIPAA compliant</span>
-          <span>Average 30% revenue increase</span>
-        </div>
-      </div>
-
-      <div class="hero-visual reveal">
-        <div class="hero-panel">
-          <div class="hero-panel-header">
-            <div class="hero-panel-title">Live Revenue Snapshot</div>
-            <span class="hero-chip">Real-time tracking</span>
-          </div>
-          <div class="metric-row">
-            <div class="metric">
-              <div class="metric-label">Claims processed today</div>
-              <div class="metric-value">1,847</div>
-              <div class="metric-pill">▲ 22% vs. last month</div>
-            </div>
-            <div class="metric">
-              <div class="metric-label">Collections increase</div>
-              <div class="metric-value">+34%</div>
-              <div class="metric-pill">Expert follow-up</div>
-            </div>
-          </div>
-          <div class="hero-taglist">
-            <span>Claims submission</span>
-            <span>Denial management</span>
-            <span>Insurance verification</span>
-            <span>Payment posting</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Solutions -->
-  <section id="solutions">
-    <div class="section-inner reveal">
-      <div class="section-header">
-        <div class="section-kicker">Revenue cycle solutions</div>
-        <h2 class="section-title">End-to-end billing services that maximize your reimbursements</h2>
-        <p class="section-subtitle">
-          From claim submission to denial appeals, Novayaa handles every step of the insurance payment process so you receive every dollar you've earned.
-        </p>
-      </div>
-
-      <div class="card-grid">
-        <article class="card">
-          <span class="card-tag">Claims Management</span>
-          <h3>Full-Service Claims Processing</h3>
-          <p>
-            We submit, track, and follow up on every claim with precision. Our experts handle rejections, appeals, and resubmissions to maximize first-pass acceptance.
-          </p>
-          <a href="#contact" class="card-link">See our success rates</a>
-        </article>
-
-        <article class="card">
-          <span class="card-tag">Denial Resolution</span>
-          <h3>Expert Denial Management</h3>
-          <p>
-            Our specialists analyze every denial, identify root causes, and aggressively pursue appeals. We turn rejections into revenue.
-          </p>
-          <a href="#contact" class="card-link">Learn about our process</a>
-        </article>
-
-        <article class="card">
-          <span class="card-tag">Collections</span>
-          <h3>Proactive Payment Recovery</h3>
-          <p>
-            We track outstanding claims, follow up with insurers persistently, and ensure timely payment posting. No payment falls through the cracks.
-          </p>
-          <a href="#contact" class="card-link">Request a revenue analysis</a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Industries -->
-  <section id="industries" class="section--light">
-    <div class="section-inner two-col">
-      <div class="reveal">
-        <div class="section-header">
-          <div class="section-kicker">Specialties we serve</div>
-          <h2 class="section-title">Expert billing for every medical specialty</h2>
-          <p class="section-subtitle">
-            Novayaa works with your practice management system and understands the unique coding and reimbursement challenges of your specialty.
-          whether you’re running a multi-location
-            
-          </p>
-        </div>
-
-        <ul class="bullet-list">
-          <li>
-            <span class="bullet-icon">✓</span>
-            <span><strong>Healthcare providers</strong> – streamline intake, documentation, and follow-ups while preserving clinician control.</span>
-          </li>
-          <li>
-            <span class="bullet-icon">✓</span>
-            <span><strong>Life sciences &amp; research</strong> – standardize study workflows, consent tracking, and monitoring across sites.</span>
-          </li>
-          <li>
-            <span class="bullet-icon">✓</span>
-            <span><strong>Healthtech platforms</strong> – plug in an AI orchestration layer across EHRs, CRMs, and custom services.</span>
-          </li>
-          <li>
-            <span class="bullet-icon">✓</span>
-            <span><strong>Payer &amp; revenue cycle</strong> – automate pre-auth, eligibility checks, and exception handling.</span>
-          </li>
-        </ul>
-      </div>
-
-      <div class="reveal">
-        <div class="contact-card">
-          <h3>Start seeing results in 30 days</h3>
-          <p>
-            Quick onboarding gets your practice up and running fast, with measurable improvements in collections within the first month.
-          </p>
-          <div class="contact-grid">
-            <div class="contact-item">
-              <span>Onboarding time</span>
-              <strong>2–3 weeks</strong>
-            </div>
-            <div class="contact-item">
-              <span>System integration</span>
-              <strong>All major EMR/EHR platforms</strong>
-            </div>
-            <div class="contact-item">
-              <span>Average results</span>
-              <strong>30% revenue increase</strong>
-            </div>
-            <div class="contact-item">
-              <span>Support</span>
-              <strong>Dedicated billing specialist</strong>
-            </div>
-          </div>
-          <button class="btn btn-primary" data-scroll="#contact">Get a free revenue assessment</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Why Novayaa -->
-  <section id="why">
-    <div class="section-inner reveal two-col">
-      <div>
-        <div class="section-header">
-          <div class="section-kicker">Why Novayaa</div>
-          <h2 class="section-title">Expert billers who fight for every dollar</h2>
-          <p class="section-subtitle">
-            We combine certified medical billing specialists with proven technology to recover maximum reimbursement from insurance companies—guaranteed.
-          </p>
-        </div>
-        <ul class="bullet-list">
-          <li>
-            <span class="bullet-icon">✓</span>
-            <span><strong>Relentless follow-up</strong> – our team tracks every claim daily and persistently contacts insurers until payment is received.</span>
-          </li>
-          <li>
-            <span class="bullet-icon">✓</span>
-            <span><strong>Expert denial appeals</strong> – certified coders and billers who know exactly how to overturn denials and win appeals.</span>
-          </li>
-          <li>
-            <span class="bullet-icon">✓</span>
-            <span><strong>Complete transparency</strong> – real-time dashboards show claim status, aging reports, and collections performance.</span>
-          </li>
-        </ul>
-      </div>
-
-      <div>
-        <div class="hero-panel">
-          <div class="hero-panel-header">
-            <div class="hero-panel-title">Client Success Stories</div>
-            <span class="hero-chip">Real results</span>
-          </div>
-          <div class="metric-row">
-            <div class="metric">
-              <div class="metric-label">Claim denials</div>
-              <div class="metric-value">-67%</div>
-              <div class="metric-pill">Multi-specialty group</div>
-            </div>
-            <div class="metric">
-              <div class="metric-label">Days in A/R</div>
-              <div class="metric-value">-42%</div>
-              <div class="metric-pill">Primary care clinic</div>
-            </div>
-          </div>
-          <div class="hero-taglist">
-            <span>Revenue maximization</span>
-            <span>Compliance guaranteed</span>
-            <span>Full transparency</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="section--light">
-    <div class="section-inner contact-layout">
-      <div class="reveal">
-        <div class="section-header">
-          <div class="section-kicker">Contact</div>
-          <h2 class="section-title">Let’s explore your first use case.</h2>
-          <p class="section-subtitle">
-            Tell us about your practice challenges. We’ll show you what an AI-assisted workflow
-            
-          </p>
-        </div>
-
-        <div class="contact-card">
-          <h3>Talk with a revenue cycle expert</h3>
-          <p>
-            No sales pitch, just a working session with someone who’s implemented complex
-            
-          </p>
-
-          <form id="contact-form">
-            <div class="form-row">
-              <div>
-                <label for="name">Full name</label>
-                <input id="name" name="name" type="text" required />
-              </div>
-              <div>
-                <label for="email">Work email</label>
-                <input id="email" name="email" type="email" required />
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div>
-                <label for="company">Organization</label>
-                <input id="company" name="company" type="text" />
-              </div>
-              <div>
-                <label for="role">Role</label>
-                <input id="role" name="role" type="text" />
-              </div>
-            </div>
-
-            <div>
-              <label for="interest">Primary interest</label>
-              <select id="interest" name="interest">
-                <option>Full revenue cycle management</option>
-                <option>Claims submission &amp; follow-up</option>
-                <option>Denial management &amp; appeals</option>
-                <option>Credentialing &amp; contracting</option>
-              </select>
-            </div>
-
-            <div>
-              <label for="message">What billing challenges are you facing?</label>
-              <textarea id="message" name="message"></textarea>
-            </div>
-
-            <button class="btn btn-primary" type="submit">Submit inquiry</button>
-            <div class="form-footnote" id="form-status"></div>
-          </form>
-        </div>
-      </div>
-
-      <div class="reveal">
-        <div class="contact-card">
-          <h3>Prefer email or phone?</h3>
-          <p>Reach our team directly and we’ll route you to the right person.</p>
-          <div class="contact-item" style="margin-bottom:10px;">
-            <span>Email</span>
-            <strong><a href="mailto:hello@novayaa.com">hello@novayaa.com</a></strong>
-          </div>
-          <div class="contact-item" style="margin-bottom:10px;">
-            <span>Phone</span>
-            <strong><a href="tel:+16463309422">+1 (646) 330-9422</a></strong>
-          </div>
-          <p class="form-footnote">
-            For HIPAA compliance, please don’t send PHI in your initial message. We’ll share a
-            secure channel for detailed discussions.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-inner">
-      <div>© <span id="year"></span> Novayaa. All rights reserved.</div>
-      <div class="footer-links">
-        <a href="#">Privacy</a>
-        <a href="#">Security</a>
-        <a href="#">Responsible AI</a>
-      </div>
-    </div>
-  </footer>
-
-  <!-- JavaScript -->
-  <script>
-    // Smooth scrolling for nav links & buttons with data-scroll
-    function smoothScrollTo(target) {
-      const el = document.querySelector(target);
-      if (!el) return;
-      const headerOffset = 80;
-      const rect = el.getBoundingClientRect();
-      const offsetTop = rect.top + window.pageYOffset - headerOffset;
-
-      window.scrollTo({
-        top: offsetTop,
-        behavior: "smooth"
-      });
-    }
-
-    document.querySelectorAll("a.nav-link, .btn[data-scroll], .pill-link").forEach((el) => {
-      el.addEventListener("click", (e) => {
-        const href = el.getAttribute("href") || el.getAttribute("data-scroll");
-        if (href && href.startsWith("#")) {
-          e.preventDefault();
-          smoothScrollTo(href);
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <meta name="author" content="">
+    <title>Novayaa - Medical Billing Solutions</title>
+    <link rel="icon" href=""> <!-- TODO: Add Icon -->
+    <link rel="stylesheet" href="assets/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link href="assets/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/animate.min.css">
+    <link href="assets/normalize.css" rel="stylesheet">
+    <link href="assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="assets/owl.theme.default.min.css" rel="stylesheet">
+    <link href="assets/app.css" rel="stylesheet">
+    <link href="assets/style-ltr.css" rel="stylesheet">
+    <link href="assets/style.css" rel="stylesheet">
+    <script src="assets/jquery-3.1.1.slim.min.js.download" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="assets/wow.js.download"></script>
+    <style>
+        footer::before {
+            background-image: url('assets/bottom.svg');
         }
-      });
-    });
+    </style>
+</head>
+<body data-new-gr-c-s-check-loaded="14.1267.0" data-gr-ext-installed="">
+<div>
+    <div class="headerHolder ">
+        <nav class="navbar navbar-toggleable-md navbar-light bg-faded main-nav darkHeader">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="/">
+                <img src="assets/logo.png" style="max-height: 4em;">
+            </a>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav ml-auto mt-2 mt-md-0">
+                    <li class="nav-item active" id="home">
+                        <a class="nav-link" href="./">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown" id="services">
+                        <a class="nav-link dropdown-toggle" href="./#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Our Services
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="./our-services/revenu-optimzation">Revenue Optimization</a>
+                            <a class="dropdown-item" href="./our-services/revenue-cycle-management">Revenue Cycle Management</a>
+                            <a class="dropdown-item" href="./our-services/medical-billing-coding">Medical Billing &amp; Coding</a>
+                            <a class="dropdown-item" href="./our-services/medical-pratice-analytics">Practice Performance Analysis</a>
+                            <a class="dropdown-item" href="./our-services/credentialing-contracting">Credentialing &amp; Contracting</a>
 
-    // Mobile nav toggle
-    const navToggle = document.querySelector(".nav-toggle");
-    const navMenu = document.querySelector(".nav-menu");
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown" id="billing-solutions">
+                        <a class="nav-link dropdown-toggle" href="./#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Billing Solutions
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="./billing-solutions/physician-billing">Physician Billing</a>
+                            <a class="dropdown-item" href="./billing-solutions/freestanding-emergency-room">Freestanding Emergency Room</a>
+                            <a class="dropdown-item" href="./billing-solutions/urgent-care">Urgent Care</a>
+                            <a class="dropdown-item" href="./billing-solutions/laboratory">Laboratory</a>
+                            <a class="dropdown-item" href="./billing-solutions/surgical-center">Ambulatory Surgical Center</a>
+                            <a class="dropdown-item" href="./billing-solutions/micro-hospitals">Micro Hospitals</a>
 
-    navToggle.addEventListener("click", () => {
-      navMenu.classList.toggle("open");
-    });
+                        </div>
+                    </li>
+                    <li class="nav-item" id="speciality">
+                        <a class="nav-link" href="./speciality">Speciality</a>
+                    </li>
+                    <li class="nav-item dropdown" id="company">
+                        <a class="nav-link dropdown-toggle" href="./#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Company
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="./company/about-us">About Us</a>
+                            <a class="dropdown-item" href="./company/contact-us">Contact Us</a>
+                            <!--                            <a class="dropdown-item" href="--><!--">Testimonials</a>-->
+                        </div>
+                    </li>
+                    <!--                    <li class="nav-item ">-->
+                    <!--                        <a class="nav-link" href="--><!--">Blog</a>-->
+                    <!--                    </li>-->
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+<style>
+    .homepage .aboutPeople .descCount {
+        font-size: 50px !important;
+    }
 
-    // Close nav on link click (mobile)
-    navMenu.querySelectorAll("a.nav-link").forEach((link) => {
-      link.addEventListener("click", () => {
-        navMenu.classList.remove("open");
-      });
-    });
+    .homepage .aboutPeople {
+        min-height: 200px;
+    }
 
-    // Simple section reveal on scroll
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
+    .cotentSec ul li {
+        color: #fff;
+    }
+
+    .cotentSec ul {
+        padding-left: 15px !important;
+    }
+
+    .captionTxtHolder .rightSection a {
+        display: inline-block;
+    }
+
+    .captionTxtHolder .leftSection div {
+        font-size: 30px;
+        letter-spacing: 1px;
+    }
+    .testmonial-sec {
+      display: block;
+      position: relative;
+      width: 100%;
+      height: 480px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin: 50px 0 50px;
+    }
+    .testmonial-sec h3{
+      font-size: 36px;
+      font-weight: 600;
+      margin: 0 0;
+      padding: 50px 0 0;
+      text-transform: capitalize;
+      line-height: 1.1;
+      color: #fff;
+    }
+    .test-txt.text-center {
+      display: block;
+      padding: 0;
+      overflow: hidden;
+      display: block;
+      color: #000;
+      font-weight: 600;
+      font-size: 16px;
+      text-transform: uppercase;
+      position: relative;
+      top: 60px;
+    }
+    .testmonial-sec .testi-body {
+      display: block;
+      text-align: center;
+      background: #fff;
+      padding: 40px 40px;
+      margin: 10px auto 0;
+      border-radius: 10px;
+    }
+    .testmonial-sec .testi-body p {
+      font-weight: 300;
+      font-size: 16px;
+      color: #666;
+      margin: 0;
+      line-height: 1.5;
+    }
+    .testmonial-sec .testi-bottm.text-center {
+      margin: -25px 0 0;
+      display: block;
+      text-align: center;
+    }
+    .testmonial-sec .testi-bottm img {
+      display: block;
+      margin: auto;
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50px;
+      text-align: center;
+      object-position: top;
+    }
+    .testmonial-sec .testi-bottm strong {
+      font-weight: 600;
+      font-size: 18px;
+      color: #fff;
+      margin: 0;
+      display: block;
+    }
+    .testmonial-sec .testi-bottm small {
+      font-weight: 400;
+      font-size: 14px;
+      color: #eee;
+      margin: 0;
+      display: block;
+      line-height: 1.5;
+    }
+    .testmonial-sec .owl-nav {
+      display: none;
+    }
+    .testmonial-sec .owl-dots {
+      display: none;
+    }
+    #testimonial-slider {
+      width: 80%;
+      margin:0 auto;
+    }
+</style>
+<div id="carouselExampleSlidesOnly" class="carousel slide homePageCarousel" data-ride="carousel">
+    <div class="carousel-inner" role="listbox">
+        <div class="carousel-item">
+            <img class="d-block img-fluid" src="assets/shutterstock_530372164_1598x818.jpeg" alt="Third slide">
+            <div class="carousel-caption captionTxtHolder">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-8 leftSection">
+                            <div>
+                                <span class="inner">
+                                    Mission Statement</span>
+                                <br>
+                                Novayaa Strives to stay among the upper class in health-care industry and billing services. A major milestone is to attain the confidence of both Institutional &amp; Professional practices
+                            </div>
+                        </div>
+                        <div class="col-lg-3 rightSection">
+                            <a href="./company/about-us">Know! Who <span>We Are?</span>
+                                <img src="assets/right-arrow.svg">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img class="d-block img-fluid" src="assets/sliderImage1.jpg" alt="First slide">
+            <div class="carousel-caption captionTxtHolder">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-8 col-sm-8 leftSection">
+                            <div><span class="inner">Much More Than Billing</span> <br>Enhance Your Revenue , Empower Your Profit</div>
+                        </div>
+                        <div class="col-lg-3  col-sm-8 rightSection"><a href="./company/about-us">Know! Who <span>We Are?</span>
+                                <img src="assets/right-arrow.svg"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img class="d-block img-fluid" src="assets/sliderImage2.jpg" alt="Second slide">
+            <div class="carousel-caption captionTxtHolder">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-8 leftSection">
+                            <div><span class="inner">Maximize Your Revenue</span> <br> Minimize Overall Practice Cost</div>
+                        </div>
+                        <div class="col-lg-3 rightSection">
+                            <a href="./company/about-us">Know! Who <span>We Are?</span>
+                                <img src="assets/right-arrow.svg">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item active">
+            <img class="d-block img-fluid" src="assets/sliderImage3.jpg" alt="Third slide">
+            <div class="carousel-caption captionTxtHolder">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-8 leftSection">
+                            <div><span class="inner">Cooperate Healthcare Service</span> <br> The world of resources at your fingertips</div>
+                        </div>
+                        <div class="col-lg-3 rightSection">
+                            <a href="./company/about-us">Know! Who <span>We Are?</span>
+                                <img src="assets/right-arrow.svg">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--    <a class="carousel-control-prev" href="#carouselExampleSlidesOnly" role="button" data-slide="prev">-->
+    <!--        <span class="carousel-control-prev-icon" aria-hidden="true"></span>-->
+    <!--        <span class="sr-only">Previous</span>-->
+    <!--    </a>-->
+    <!--    <a class="carousel-control-next" href="#carouselExampleSlidesOnly" role="button" data-slide="next">-->
+    <!--        <span class="carousel-control-next-icon" aria-hidden="true"></span>-->
+    <!--        <span class="sr-only">Next</span>-->
+    <!--    </a>-->
+</div>
+<section class="why-us">
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-lg-10 text-center">
+                <h2>WHY Novayaa?</h2>
+                <p>Our state of the art infrastructure will provide you Increased Cash Flow, enhance your revenue, empowering your profits and simplifying your medical billing.
+                    <br>
+                    You'll not only see an improvement in your revenue but increased patient satisfaction and less office stress.
+                </p>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="container overLapSection homepage">
+        <div class="row">
+            <div class="col-lg-3 col-xs-6 col-md-8 push-md-2 push-lg-0">
+                <div class="aboutPeople wow fadeIn" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;">
+                    <div class="imgSection">
+                        <div class="nameSection">
+                            <div class="name">Less Account Receivable(AR)</div>
+                            <i class="fa fa-level-down"></i>
+                        </div>
+                    </div>
+                    <div class="descTxt descCount">
+                        5%
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-xs-6 col-md-8 push-md-2 push-lg-0">
+                <div class="aboutPeople wow fadeIn" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeIn;">
+                    <div class="imgSection">
+                        <div class="nameSection">
+                            <div class="name">More Revenue</div>
+                            <i class="fa fa-level-up"></i>
+                        </div>
+                    </div>
+                    <div class="descTxt descCount">
+                        30%
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-xs-6 col-md-8 push-md-2 push-lg-0">
+                <div class="aboutPeople wow fadeIn" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;">
+                    <div class="imgSection">
+                        <div class="nameSection">
+                            <div class="name">Less Operational Cost</div>
+                            <i class="fa fa-sort-amount-desc"></i>
+                        </div>
+                    </div>
+                    <div class="descTxt descCount">
+                        55%
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-xs-6 col-md-8 push-md-2 push-lg-0">
+                <div class="aboutPeople wow fadeIn" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;">
+                    <div class="imgSection">
+                        <div class="nameSection">
+                            <div class="name">Acceptance of Claims in 1st Attempt</div>
+                            <i class="fa fa-bar-chart"></i>
+                        </div>
+                    </div>
+                    <div class="descTxt descCount">
+                        99%
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section style="width: 100%;overflow: hidden;padding-bottom: 0px;">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="full-box full-box-text">
+                <h3>Better Numbers</h3>
+                <p>Best patient care and making the business healthier generates better numbers for an organization. High-quality medical care along with a superb billing team create better numbers and better numbers keep the business at a high altitude.<br>
+                    <b>Call us now</b> and let’s discuss plans for how to do business the way it should be.
+                </p>
+            </div>
+        </div>
+        <div class="col-lg-6 full-box-image" style="padding: 0px !important;">
+            <div class="full-box image_box" style="background-image: url(&#39;./assets/images/betternumber.jpg&#39;);">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 full-box-image" style="padding: 0px  !important;">
+            <div class="full-box image_box" style="background-image: url(&#39;./assets/images/hasslefreebilling.jpg&#39;);">
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="full-box full-box-text">
+                <h3>Hassle Free Billing</h3>
+                <p>
+                    Incorrect and negative coding of claims causes a massive percentage of loss. We are experts in trapping each step of the billing cycle, so our claims get adjudicated and paid within short span of time.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="full-box full-box-text">
+                <h3>Killer Analytics</h3>
+                <p>Novayaa has analytical tools and a technical crew to look after killer analytics. Also, provide optics to show you financial outcomes. Our financial analysis offers great help to keep the TOP line growing up. 
+                </p>
+            </div>
+        </div>
+        <div class="col-lg-6 full-box-image" style="padding: 0px !important;">
+            <div class="full-box image_box" style="background-image: url(&#39;./assets/images/killeranalytics.jpg&#39;);">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 full-box-image" style="padding: 0px  !important;">
+            <div class="full-box image_box" style="background-image: url(&#39;./assets/images/proactivesupport1.jpg&#39;);">
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="full-box full-box-text">
+                <h3>Proactive Support</h3>
+                <p>
+                    Needful reporting is provided to ensure your company is operating at optimal performance. In addition, our team of experts reviews key performance metrics and proactively notify you if performance is not consistent with your targets.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container-fluid bottom-padding" style="padding-top: 30px;">
+    <div class="row">
+        <div class="col-xl-2 col-lg-2 leftBlueBox col-md-9 wow fadeInLeft" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInLeft;">
+            <div class="serviceProvide">
+                <br>
+                <h1 style="font-weight: bolder">Core Objective</h1>
+                <br>
+                <h2 style="text-align: justify-all">Supplying Finest Services at Right Time, in conjunction with best People</h2>
+            </div>
+        </div>
+        <div class="col-xl-7 col-lg-6 push-lg-1 col-md-12">
+            <div class="servicesSection wow fadeInUp" data-wow-delay="0.8s" style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInUp;">
+                <a class="serviceBox ripple">
+                    <i class="fa fa-address-card"></i>
+                    <div class="serviceName">CREDENTIALING</div>
+                    <p>
+                        To provide Quality Service, We can help you with a fully grasped team of Credentialing and Enrollment.
+                        <br>
+                        The team takes the best care of Form Preparation, Enrollment Formalities, Re-credentialing, electronic submission of documents, EDI setups and CLIA, CAQH, DEAs, NPI, and TIN Registrations.
+                    </p>
+                </a>
+                <a class="serviceBox  ripple">
+                    <i class="fa fa-user-plus"></i>
+                    <div class="serviceName">PATIENT ENROLLMENT</div>
+                    <p>
+                        By providing enrollment
+                        services we are at the epic level of patient care. Where patients can enroll themselves in just meantime. When it comes to patient enrollment, the whole system of verbal exchange among physicians and patients is quite a time taking. However, Novayaa has established a team of experts who created a smart and less time taking enrollment process with maximum ease of visitors.
+
+
+                    </p>
+                </a>
+                <a class="serviceBox  ripple">
+                    <i class="fa fa-clock-o"></i>
+                    <div class="serviceName">SMART SCHEDULING</div>
+                    <p>Through the smart scheduling feature, patients can get coordinated and streamlined appointments at their convenience. Complete registration off-site before the visit, so patient must not be delayed at the front desk. This practice will save their time and reduce confusion. They will also avail the privilege of automated pre-appointment reminders and cancellations or reschedule visits via email and text.</p>
+                </a>
+                <a class="serviceBox  ripple">
+                    <i class="fa fa-bell-o"></i>
+                    <div class="serviceName">APPOINTMENT REMINDERS</div>
+                    <p>
+                        A dedicated team has been assigned to fulfill the responsibility of appointment reminders. Patients are timely prompted for the next visit to ensure the healthy outcome.
+                        <br>
+                        <br>
+                        1. Real time Phone Reminder<br>
+                        2. Reminder Texting System<br>
+                        3. Email Reminder System
+                    </p>
+                </a>
+                <a class="serviceBox  ripple">
+                    <i class="fa fa-check"></i>
+                    <div class="serviceName">ELIGIBILITY VERIFICATION</div>
+                    <p>According to industry sources,25% of all health care claim denials are because a patient is not eligible for services billed to the insurer by the provider. Often, a patient would be ineligible for benefits because his or her policy has been terminated or modified etc.Our well-trained staff verify the eligibility of patient’s benefits coverage (which are being provided) through software or calls to reduce the claim denials and expedite the payments at proper rates</p>
+                </a>
+                <a class="serviceBox  ripple">
+                    <i class="fa fa-credit-card-alt"></i>
+                    <div class="serviceName">INSURANCE AUTHORIZATIONS</div>
+                    <p>
+                        Pre-authorization / Pre-Certification is taken well ahead of the patient’s visit. We ensure less fear of claim denials and correctly determine the payment flow. Qualified staff timely authorize the services through Portals, Calls, and Fax.
+                    </p>
+                </a>
+            </div>
+        </div>
+        <div class="col-xl-2 col-lg-3 rightBlueBox col-md-9 ml-md-auto  ripple wow fadeInRight" data-wow-delay="01.2s" style="visibility: visible; animation-delay: 1.2s; animation-name: fadeInRight;">
+            <div class="cotentSec ">
+                <div class="headingTxt" style="font-size: 30px;font-weight: bold">
+                    Capability &amp; Strengths
+                </div>
+                <p>Novayaa’s experienced and professional team has the ability to perform in the following areas:</p>
+                <br>
+                <ul>
+                    <li>Responsible to provide economical medical billing services.</li>
+                    <li>Novayaa all the time stays compliant with HIPAA regulations.</li>
+                    <li>Successfully handled Group Practices.</li>
+                    <li>Got fascinating response from individual billers &amp; small billing companies.</li>
+                    <li>Worth of working greater than 100 practices simultaneously.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section id="what-we-do" class="ourservices">
+    <div class="overlay"></div>
+    <div class="container">
+        <br>
+        <br><br>
+        <h2 class="section-title mb-2 h1">Our Services</h2>
+        <p class="text-center h5" style="color:#fff;">
+            Novayaa is committed to providing cost-effective and HIPAA-compliant medical billing solutions to the doctor’s offices, group practices, and even individual billers and small medical billing companies.
+        </p>
+        <div class="row mt-5">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                <div class="card card_equal" style="height: 214.797px;">
+                    <div class="card-block block-1">
+                        <h3 class="card-title">Revenue Optimization</h3>
+                        <p class="card-text">
+                            Our Revenue Optimization Program focuses on pricing and market strategies. Also, involve pre-emptive and analytical ways to have the growth up.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                <div class="card card_equal" style="height: 214.797px;">
+                    <div class="card-block block-2">
+                        <h3 class="card-title">Revenue Cycle Management</h3>
+                        <p class="card-text">
+                            We provide a widespread perception to drive augmented revenue, improved progress in overall profitability, and arrangement of amplified reimbursement.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                <div class="card card_equal" style="height: 214.797px;">
+                    <div class="card-block block-3">
+                        <h3 class="card-title">Medical Billing and Coding</h3>
+                        <p class="card-text">
+                            Our Proactive coders and billing specialists keep your staff away from administrative barriers to the billing process and low payments.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                <div class="card card_equal" style="height: 214.797px;">
+                    <div class="card-block block-4">
+                        <h3 class="card-title">Medical Practice Analytics</h3>
+                        <p class="card-text">Analytical observation of practice provides a comprehensive insight into performance.  Also, weak areas of work are intimated to intact maximum productivity and reimbursements.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <div class="card">
+                    <div class="card-block block-5">
+                        <h3 class="card-title">Crendentialing and Contracting</h3>
+                        <p class="card-text">
+                            Credentialing &amp; Contracting are crucial parts amid elements of the billing process. Our credentialing staff stays informed with contemporary changes and keeps our clients remain compliant with Government, Commercial and Private Entities.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <script>
+            var all_cards = $('.card_equal');
+            var all_card_height = 0;
+            $.each(all_cards, function () {
+                if ($(this).outerHeight() > all_card_height) {
+                    all_card_height = $(this).outerHeight();
+                }
+            });
+            $('.card_equal').css('height', all_card_height + "px");
+        </script>
+
+    </div>
+</section>
+<section>
+    <div class="container">
+        <br>
+        <br>
+        <br>
+        <div class="row justify-content-md-center">
+            <div class="col-lg-10 text-center">
+                <h2>OUR PROCESS</h2>
+                <p>
+                    Since the business environment has been greater complicated ahead of several obstacles, however, Novayaa adopted a comprehensive approach to measuring the performance of small and large practices. Our process runs through the following phases: 
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-8 push-md-2 push-lg-0">
+                <div class="aboutPeople Ourprocess wow fadeIn" data-wow-delay="0.2s" style="height: 274.062px; visibility: hidden; animation-delay: 0.2s; animation-name: none;">
+                    <div class="imgSection">
+                        <img width="50px" src="assets/claim-submission.png">
+                        <div class="nameSection">
+                            <div class="name">Credentialing</div>
+                        </div>
+                    </div>
+                    <div class="descTxt">
+                        Credentialing of a provider with Government, Commercial and Private Entities is a little time taking process however, getting a claim paid is impossible unless the provider or practice is firmly identified by the payer. Available Out of network benefits is another option to have the claim paid.
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-8 push-md-2 push-lg-0">
+                <div class="aboutPeople Ourprocess wow fadeIn" data-wow-delay="0.1s" style="height: 274.062px; visibility: hidden; animation-delay: 0.1s; animation-name: none;">
+                    <div class="imgSection">
+                        <img width="50px" src="assets/charge-entry.jpg">
+                        <div class="nameSection">
+                            <div class="name">Charge Entry</div>
+                        </div>
+                    </div>
+                    <div class="descTxt">
+                       The charge Entry process has a vital role in the medical billing cycle. Novayaa ensures that entered information in the claims is flawless and error-free. 
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-8 push-md-2 push-lg-0">
+                <div class="aboutPeople Ourprocess wow fadeIn" data-wow-delay="0.3s" style="height: 274.062px; visibility: hidden; animation-delay: 0.3s; animation-name: none;">
+                    <div class="imgSection">
+                        <img width="50px" src="assets/payment-posting.jpg">
+                        <div class="nameSection">
+                            <div class="name">Payment Posting</div>
+                        </div>
+                    </div>
+                    <div class="descTxt">
+                        Payment posting is such an important part of an efficient medical billing system. Payments are posted in the patients’ accounts. The team also takes care of adjustments, write-offs, denied and rejected claims, and more like secondary billing and corrected claims.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-8 push-md-2 push-lg-0">
+                <div class="aboutPeople Ourprocess wow fadeIn" data-wow-delay="0.1s" style="height: 274.062px; visibility: hidden; animation-delay: 0.1s; animation-name: none;">
+                    <div class="imgSection">
+                        <img width="50px" src="assets/charge-entry.jpg">
+                        <div class="nameSection">
+                            <div class="name">A/R Follow Up</div>
+                        </div>
+                    </div>
+                    <div class="descTxt">
+                        Novayaa has volunteers who are technically sound and very well aware of all possible denials received from carriers. Smart work and quick response to a denied claim is their core obligation. So the team gets reimbursements and makes the practice prosper.
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-4 col-md-8 push-md-2 push-lg-0">
+                <div class="aboutPeople Ourprocess wow fadeIn" data-wow-delay="0.2s" style="height: 274.062px; visibility: hidden; animation-delay: 0.2s; animation-name: none;">
+                    <div class="imgSection">
+                        <img width="50px" src="assets/claim-submission.png">
+                        <div class="nameSection">
+                            <div class="name">Denial Management</div>
+                        </div>
+                    </div>
+                    <div class="descTxt">
+                        Management of denials is a decisive part of the revenue cycle. Healthy cash flow and successful revenue could not be attained until having an efficient denial fixation system. Our staff easily determine the reason for denials and also tries to reduce the risk of upcoming denials. Finally, we achieve maximum reimbursements. 
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-8 push-md-2 push-lg-0">
+                <div class="aboutPeople Ourprocess Ourprocess wow fadeIn" data-wow-delay="0.3s" style="height: 274.062px; visibility: hidden; animation-delay: 0.3s; animation-name: none;">
+                    <div class="imgSection">
+                        <img width="50px" src="assets/payment-posting.jpg">
+                        <div class="nameSection">
+                            <div class="name">Reporting</div>
+                        </div>
+                    </div>
+                    <div class="descTxt">
+                        Reports are considered to show the performance of a practice in a nutshell. Novayaa generates a wide array of reports for the clients to reflect various aspects of their practices. Daily, Weekly, Biweekly, Monthly, and Annual Reports are given to the clients accordingly.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+          <small class="test-txt text-center">testimonial</small>
+          <div class="testmonial-sec" style="background: url(assets/images/testi-bg.png);background-size: 100% 100%;background-repeat: no-repeat;">
+            <h3 class="text-center">Our Client Say ?</h3>
+            <div id="testimonial-slider" class="owl-carousel owl-theme owl-loaded owl-drag">       
+              
+              
+              
+              
+              
+            <div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(-6048px, 0px, 0px); transition: all; width: 9504px;"><div class="owl-item cloned" style="width: 864px;"><div class="item">
+                <div class="testi-body">
+                  <p>“I strongly recommend Novayaa to anyone, who is currently suffering from their current revenue cycle operations, their approach is very professional, and they are excellent in account management.  Moreover, our collections have significantly improved ever since we switched to Novayaa, their operations are structured and the team assigned to us is quite knowledgeable and expert in what they do.”</p>
+                </div>
+                <div class="testi-bottm text-center">
+                  <div class="img-holder">
+                    <img src="https://via.placeholder.com/150x150?text=Novayaa">
+                  </div>
+                  <strong>Dr. Kimberly Dunn MD, President</strong>
+                  <small>K-Dunn and Associates, P.A. (DBA HealthQuilt), Houston, TX</small>
+                </div>
+              </div></div><div class="owl-item cloned" style="width: 864px;"><div class="item">
+                <div class="testi-body">
+                  <p>“Ever since we partnered with Novayaa, growth in our collections has been more than what we anticipated. Their aggressive and professional approach has made it all possible.  The other factor is their accessibility, as they are flexible and easily approachable at my convenience.”</p>
+                </div>
+                <div class="testi-bottm text-center">
+                  <div class="img-holder">
+                    <img src="assets/Dr-Azeem.jpg">
+                  </div>
+                  <strong>Dr. Syed Khaja Azeemuddin MD</strong>
+                  <small>Southwest Medical Center, Houston, TX</small>
+                </div>
+              </div></div><div class="owl-item cloned" style="width: 864px;"><div class="item">
+                <div class="testi-body">
+                  <p>“Novayaa has tremendously fulfilled all of our expectations, in every area of Revenue Cycle Management and Account management. They are a team of dedicated and detail-oriented people who just not take your account as another client business, but they work with a great knowledge and passion in order to achieve our revenue goals.”</p>
+                </div>
+                <div class="testi-bottm text-center">
+                  <div class="img-holder">
+                    <img src="https://via.placeholder.com/150x150?text=Novayaa">
+                  </div>
+                  <strong>Dr. Muhammad Khan MD/ Dr. Rehan Khan MD</strong>
+                  <small>Director Muhammad J.S. Khan MD PC, Elmhurst, NY</small>
+                </div>
+              </div></div><div class="owl-item" style="width: 864px;"><div class="item">
+                <div class="testi-body">
+                  <p>“Ever since we partnered with Novayaa, growth in our collections has been more than what we anticipated. Their aggressive and professional approach has made it all possible.  The other factor is their accessibility, as they are flexible and easily approachable at my convenience.”</p>
+                </div>
+                <div class="testi-bottm text-center">
+                  <div class="img-holder">
+                    <img src="https://via.placeholder.com/150x150?text=Novayaa">
+                  </div>
+                  <strong>Dr. Muhammad Tariq</strong>
+                  <small>Director MD, Shifa Medical Center – Brooklyn, NY</small>
+                </div>
+              </div></div><div class="owl-item" style="width: 864px;"><div class="item">
+                <div class="testi-body">
+                  <p>“Novayaa helped us in achieving the goals of our monthly collection, and our denials are reduced significantly. They provided us a team of experienced personnel devoted to our account and assigned us an account manager who is extremely professional, friendly, and attentive.  We are delighted that we partnered with Novayaa in our revenue cycle area.”</p>
+                </div>
+                <div class="testi-bottm text-center">
+                  <div class="img-holder">
+                    <img src="assets/1628523391192.jpg">
+                  </div>
+                  <strong>Dr. Badar Kanwar MD</strong>
+                  <small>Hunt Regional Medical Center, Greenville, TX</small>
+                </div>
+              </div></div><div class="owl-item" style="width: 864px;"><div class="item">
+                <div class="testi-body">
+                  <p>“I strongly recommend Novayaa to anyone, who is currently suffering from their current revenue cycle operations, their approach is very professional, and they are excellent in account management.  Moreover, our collections have significantly improved ever since we switched to Novayaa, their operations are structured and the team assigned to us is quite knowledgeable and expert in what they do.”</p>
+                </div>
+                <div class="testi-bottm text-center">
+                  <div class="img-holder">
+                    <img src="https://via.placeholder.com/150x150?text=Novayaa">
+                  </div>
+                  <strong>Dr. Kimberly Dunn MD, President</strong>
+                  <small>K-Dunn and Associates, P.A. (DBA HealthQuilt), Houston, TX</small>
+                </div>
+              </div></div><div class="owl-item" style="width: 864px;"><div class="item">
+                <div class="testi-body">
+                  <p>“Ever since we partnered with Novayaa, growth in our collections has been more than what we anticipated. Their aggressive and professional approach has made it all possible.  The other factor is their accessibility, as they are flexible and easily approachable at my convenience.”</p>
+                </div>
+                <div class="testi-bottm text-center">
+                  <div class="img-holder">
+                    <img src="assets/Dr-Azeem.jpg">
+                  </div>
+                  <strong>Dr. Syed Khaja Azeemuddin MD</strong>
+                  <small>Southwest Medical Center, Houston, TX</small>
+                </div>
+              </div></div><div class="owl-item active" style="width: 864px;"><div class="item">
+                <div class="testi-body">
+                  <p>“Novayaa has tremendously fulfilled all of our expectations, in every area of Revenue Cycle Management and Account management. They are a team of dedicated and detail-oriented people who just not take your account as another client business, but they work with a great knowledge and passion in order to achieve our revenue goals.”</p>
+                </div>
+                <div class="testi-bottm text-center">
+                  <div class="img-holder">
+                    <img src="https://via.placeholder.com/150x150?text=Novayaa">
+                  </div>
+                  <strong>Dr. Muhammad Khan MD/ Dr. Rehan Khan MD</strong>
+                  <small>Director Muhammad J.S. Khan MD PC, Elmhurst, NY</small>
+                </div>
+              </div></div><div class="owl-item cloned" style="width: 864px;"><div class="item">
+                <div class="testi-body">
+                  <p>“Ever since we partnered with Novayaa, growth in our collections has been more than what we anticipated. Their aggressive and professional approach has made it all possible.  The other factor is their accessibility, as they are flexible and easily approachable at my convenience.”</p>
+                </div>
+                <div class="testi-bottm text-center">
+                  <div class="img-holder">
+                    <img src="https://via.placeholder.com/150x150?text=Novayaa">
+                  </div>
+                  <strong>Dr. Muhammad Tariq</strong>
+                  <small>Director MD, Shifa Medical Center – Brooklyn, NY</small>
+                </div>
+              </div></div><div class="owl-item cloned" style="width: 864px;"><div class="item">
+                <div class="testi-body">
+                  <p>“Novayaa helped us in achieving the goals of our monthly collection, and our denials are reduced significantly. They provided us a team of experienced personnel devoted to our account and assigned us an account manager who is extremely professional, friendly, and attentive.  We are delighted that we partnered with Novayaa in our revenue cycle area.”</p>
+                </div>
+                <div class="testi-bottm text-center">
+                  <div class="img-holder">
+                    <img src="assets/1628523391192.jpg">
+                  </div>
+                  <strong>Dr. Badar Kanwar MD</strong>
+                  <small>Hunt Regional Medical Center, Greenville, TX</small>
+                </div>
+              </div></div><div class="owl-item cloned" style="width: 864px;"><div class="item">
+                <div class="testi-body">
+                  <p>“I strongly recommend Novayaa to anyone, who is currently suffering from their current revenue cycle operations, their approach is very professional, and they are excellent in account management.  Moreover, our collections have significantly improved ever since we switched to Novayaa, their operations are structured and the team assigned to us is quite knowledgeable and expert in what they do.”</p>
+                </div>
+                <div class="testi-bottm text-center">
+                  <div class="img-holder">
+                    <img src="https://via.placeholder.com/150x150?text=Novayaa">
+                  </div>
+                  <strong>Dr. Kimberly Dunn MD, President</strong>
+                  <small>K-Dunn and Associates, P.A. (DBA HealthQuilt), Houston, TX</small>
+                </div>
+              </div></div></div></div><div class="owl-nav"><button type="button" role="presentation" class="owl-prev"><span aria-label="Previous">‹</span></button><button type="button" role="presentation" class="owl-next"><span aria-label="Next">›</span></button></div><div class="owl-dots"><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot"><span></span></button><button role="button" class="owl-dot active"><span></span></button></div></div>
+          </div>
+        </div>
+        <script>
+            var all_cards = $('.Ourprocess');
+            var all_card_height = 0;
+            $.each(all_cards, function () {
+                if ($(this).outerHeight() > all_card_height) {
+                    all_card_height = $(this).outerHeight();
+                }
+            });
+            $('.Ourprocess').css('height', (all_card_height) + "px");
+        </script>
+    </div>
+    <br>
+    <br>
+</section>
+<style>
+    .image_box {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+</style>
+<script>
+    $('#home').addClass('active');
+</script>
+
+
+
+    <div class="testimonial" style="display: none;">
+    <div class="container">
+        <h2>Testimonial</h2>
+        <span class="qoute-section">
+				<i class="fa fa-quote-right" aria-hidden="true"></i>
+			</span>
+
+        <div id="testimonial" class="carousel slide">
+
+            <ul class="carousel-indicators">
+                <li data-target="#testimonial" data-slide-to="0" class="active"></li>
+                <li data-target="#testimonial" data-slide-to="1"></li>
+                <li data-target="#testimonial" data-slide-to="2"></li>
+            </ul>
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div style="width: 100%;">
+                        <img src="assets/testimonial-1.jpg" class="testimonial-image">
+                    </div>
+                    <h5>Faizan Javaid</h5>
+                    <div class="row">
+                        <div class="col-md-2">
+
+                        </div>
+                        <div class="col-md-8">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div style="width: 100%;">
+                        <img src="assets/testimonial-2.jpg" class="testimonial-image">
+                    </div>
+                    <h5>Faizan Javaid</h5>
+                    <div class="row">
+                        <div class="col-md-2">
+
+                        </div>
+                        <div class="col-md-8">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div style="width: 100%;">
+                        <img src="assets/testimonial-3.jpg" class="testimonial-image">
+                    </div>
+                    <h5>Faizan Javaid</h5>
+                    <div class="row">
+                        <div class="col-md-2">
+                        </div>
+                        <div class="col-md-8">
+
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a class="carousel-control-prev" href="./#testimonial" data-slide="prev">
+                <i class="fa fa-chevron-left" aria-hidden="true"></i>
+
+            </a>
+            <a class="carousel-control-next" href="./#testimonial" data-slide="next">
+                <i class="fa fa-chevron-right" aria-hidden="true"></i>
+            </a>
+
+        </div>
+    </div>
+</div>
+
+<section class="footer-top" style="display: none">
+    <div class="container">
+        <div class="row" style="margin-top: -55px;">
+            <div class="col-md-4">
+                <div class="footer-box footer-box-one">
+                    <a href="./#" class="media-left pull-left left-icon mr-30 mr-sm-15"><i class="fa fa-ambulance text-white"></i></a>
+                    <div class="media-body">
+                        <h4 class="media-heading heading title">24 Hours Service</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            <a href="./#"><i class="fa fa-arrow-circle-right font-14"></i></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="footer-box footer-box-two">
+                    <a href="./#" class="media-left pull-left left-icon mr-30 mr-sm-15"><i class="fa fa-comments-o text-white"></i></a>
+                    <div class="media-body">
+                        <h4 class="media-heading heading title">Online Help</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            <a href="./#"><i class="fa fa-arrow-circle-right font-14"></i></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="footer-box footer-box-three">
+                    <a href="./#" class="media-left pull-left left-icon mr-30 mr-sm-15"><i class="fa fa-credit-card text-white"></i></a>
+                    <div class="media-body">
+                        <h4 class="media-heading heading title">Online Payment</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            <a href="./#"><i class="fa fa-arrow-circle-right font-14"></i></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer>
+    <div class="overlay">
+        <div class="container widget">
+            <div class="row">
+                <div class="col-md-3 border-right-black">
+                    <h5 class="widget-title">Our Services</h5>
+                    <ul>
+                        <li><a href="./our-services/revenu-optimzation">Revenue Optimization</a></li>
+                        <li><a href="./our-services/revenue-cycle-management">Revenue Cycle Management</a></li>
+                        <li><a href="./our-services/medical-billing-coding">Medical Billing &amp; Coding</a></li>
+                        <li><a href="./our-services/medical-pratice-analytics">Medical Practice Analytics</a></li>
+                        <li><a href="./our-services/credentialing-contracting">Credentialing &amp; Contracting</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 border-right-black footer-center">
+                    <img src="assets/footer.png" class="footer-logo">
+                    <p class="footer-text" style="text-align: left;">
+                        We are an organization that focuses on delivering full solutions tailored to our client's various Revenue Cycle operations. We currently service clients located in Texas, Louisiana, Arkansas, Oklahoma, Alabama, and New Jersey.
+                    </p>
+                    <h4 class="text-white mb-30 text-center">Subscribe Our Newsletter</h4>
+                    <form id="footer-mailchimp-subscription-form" class="newsletter-form mt-10" novalidate="true">
+                        <label class="display-block" for="mce-EMAIL"></label>
+                        <div class="input-group">
+                            <input type="email" value="" name="EMAIL" placeholder="Your Email" class="form-control" data-height="37px" id="mce-EMAIL" style="height: 37px;">
+                            <span class="input-group-btn input-group-sm">
+								<button type="submit" class="btn btn-colored btn-theme-colored m-0"><i class="fa fa-paper-plane-o text-white"></i></button>
+							</span>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-3 footer-right">
+                    <div class="widget dark text-right sm-text-center pt-120 pb-140 pt-xs-40 pb-xs-0 maxwidth400">
+                        <h5 class="widget-title">Quick Contact</h5>
+                        <ul>
+                            <li><a href="./#">+1 (437) 929-7050</a></li>
+                            <li><a href="./#">info@novayaa.com</a></li>
+                            <li><a href="./#" class="lineheight-20">252 Halfmoon Ct,<br>West New York, NJ 07093</a></li>
+                        </ul>
+                        <ul class="social-icons icon-gray icon-circled icon-sm pull-right sm-pull-none sm-text-center mt-sm-15">
+                            <li class="wow fadeInRight" data-wow-delay=".1s" style="visibility: hidden; animation-delay: 0.1s; animation-name: none;"><a target="_blank" href="https://www.facebook.com/novayaa/"><i class="fa fa-facebook"></i></a></li>
+                            <li class="wow fadeInRight" data-wow-delay=".2s" style="visibility: hidden; animation-delay: 0.2s; animation-name: none;"><a target="_blank" href="https://twitter.com/novayaa"><i class="fa fa-twitter"></i></a></li>
+                            <!--                        <li class="wow fadeInRight" data-wow-delay=".3s"><a href="#"><i class="fa fa-google-plus"></i></a></li>-->
+                            <!--                        <li class="wow fadeInRight" data-wow-delay=".4s"><a href="#"><i class="fa fa-instagram"></i></a></li>-->
+                            <li class="wow fadeInRight" data-wow-delay=".3s" style="visibility: hidden; animation-delay: 0.3s; animation-name: none;"><a target="_blank" href="https://www.linkedin.com/in/novayaa"><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // $(window).scroll(function() {
+    // 	var scroll = $(window).scrollTop();
+    // 	if((screen.width) > 992) {
+    // 		if (scroll >= 200) {
+    // 			$(".main-nav").addClass("darkHeader animated fadeIn", 1000);
+    // 		} else {
+    // 			$(".main-nav").removeClass("darkHeader");
+    // 		}
+    // 	}
+    // });
+
+
+    $(".main-nav .navbar-nav .nav-item.dropdown").hover(
+        function () {
+            $(this).addClass('show');
+        },
+        function () {
+            $(this).removeClass("show", 500);
+        }
+    );
+</script>
+<script src="assets/tether.min.js.download" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="assets/bootstrap.min.js.download" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script>
+    new WOW().init();
+</script>
+<script src="assets/owl.carousel.min.js.download"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#testimonial-slider").owlCarousel({
+            singleItem: true,
+            items:1,
+            loop: true,
+            slideSpeed: 300,
+            paginationSpeed: 400,
+            autoplay: true,
+            animateIn: 'fadeIn', // add this
+            animateOut: 'fadeOut', // and this
+            responsive:{
+              0:{
+                  items:1,
+                  nav:true
+              }
           }
         });
-      },
-      { threshold: 0.18 }
-    );
-
-    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
-
-    // Highlight nav item on scroll
-    const sectionIds = ["solutions", "industries", "why", "contact"];
-    const sectionMap = sectionIds.map((id) => ({
-      id,
-      el: document.getElementById(id)
-    }));
-
-    const navLinks = document.querySelectorAll("a.nav-link");
-
-    function updateActiveNav() {
-      let currentId = null;
-      const scrollPos = window.pageYOffset + 110;
-
-      for (const s of sectionMap) {
-        if (s.el && scrollPos >= s.el.offsetTop) {
-          currentId = s.id;
-        }
-      }
-
-      navLinks.forEach((link) => {
-        const href = link.getAttribute("href");
-        if (href === "#" + currentId) {
-          link.classList.add("active");
-        } else {
-          link.classList.remove("active");
-        }
-      });
-    }
-
-    window.addEventListener("scroll", updateActiveNav);
-    window.addEventListener("load", updateActiveNav);
-
-    // Contact form: simple fake submit handler
-    const form = document.getElementById("contact-form");
-    const statusEl = document.getElementById("form-status");
-
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      statusEl.textContent = "Thanks — we’ve recorded your details. A member of the Novayaa team will follow up shortly.";
+     
     });
+</script>
 
-    // Footer year
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+</body></html>
